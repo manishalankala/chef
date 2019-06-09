@@ -29,3 +29,105 @@ Roles provide logical grouping of cookbooks and other roles. A sample role can b
 Getting Started
 -------------------------
 Now that you have the chef-repo ready to go, check out [Learn Chef](https://learn.chef.io/) to proceed with your workstation setup. If you have any questions about Chef you can always ask [our support team](https://www.chef.io/support/) for a helping hand.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+manage.chef.io/
+
+Create new account with organization name eurodrone
+
+docker pull chef/chefdk
+
+
+https://downloads.chef.io/chefdk  --- windows
+
+docker run -p 443 --privileged -h=chef -it chef/chefdk:latest
+
+
+cd account :service
+mvn clean install 
+docker build -t manishalankala/airbus-demo:account
+sudo docker push manishalankala/airbus-demo:account
+
+Chef server
+knife configuration
+cookbooks
+nodes
+
+
+
+
+
+
+wget https://packages.chef.io/files/stable/chefdk/4.0.60/el/7/chefdk-4.0.60-1.el7.x86_64.rpm (Installed on worker machine)
+curl -O https://packages.chef.io/files/stable/chefdk/4.0.60/el/7/chefdk-4.0.60-1.el7.x86_64.rpm
+ 
+yum install chefdk-4.0.60-1.el7.x86_64.rpm 
+cd /opt/chefdk/
+chef --version
+knife chef-repo
+mkdir chef-repo (Created repo)
+cd chef
+cd chef-repo
+mkdir .chef (Created repo)
+cd .chef/
+ssh -i .chef/jmslave alma252@35.211.155.102 ( ssh to node )
+knife bootstrap 35.211.155.102 -x alma252 -i .chef/jmslave --sudo --node-name gce-jmslave
+knife bootstrap 35.211.155.102 --ssh-user-name alma252 -i .chef/jmslave --sudo --node-name gce-jmslave
+knife bootstrap 35.211.155.102 --ssh-user alma252 -i .chef/jmslave --sudo --node-name gce-jmslave
+knife bootstrap 35.211.155.102 -U alma252 -i .chef/jmslave --sudo --node-name gce-jmslave
+knife bootstrap 35.211.155.102 -U alma252 -i .chef/jmslave --sudo --node-name gce-jmslave -V -y
+knife bootstrap 35.211.155.102 -U alma252 -i .chef/jmslave --sudo --node-name gce-jmslave -VV -y
+knife bootstrap 35.211.155.102 --ssh-user alma252 -i .chef/jmslave --sudo --node-name gce-jmslave -VV -y
+ssh -i .chef/jmslave alma252@35.211.155.102
+cat .chef/jmslave
+cat .chef/jmslave.pub 
+ssh -i .chef/jmslave alma252@35.211.155.102
+knife bootstrap 35.211.155.102 --ssh-user alma252 -i .chef/jmslave --sudo --node-name gce-jmslave -VV -y
+
+
+
+
+
+https://api.chef.io/organizations/eurodrone/cookbooks
+
+https://linuxacademy.com/community/posts/show/topic/22511-bootstrap-a-node-using-ssh-publicprivate-key-asking-sudo-pwd
+https://docs.chef.io/chef_client_overview.html
+http://blog.asquareb.com/blog/2014/06/09/basic-chef-knife-commands/
+https://linoxide.com/linux-how-to/chef-workstation-server-node-centos-7/
+https://www.itzgeek.com/how-tos/linux/centos-how-tos/setup-chef-12-centos-7-rhel-7.html
+https://blog.andreev.it/?p=3522
+https://docs.chef.io/knife_node.html 
+https://docs.chef.io/knife_bootstrap.html
+https://serverfault.com/questions/653543/chef-ssh-without-password
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
